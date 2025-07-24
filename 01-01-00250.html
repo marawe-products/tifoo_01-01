@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Perfekt schräge gelbe Kante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Schräger Header mit perfektem Abschluss</title>
   <style>
     * {
       margin: 0;
@@ -11,41 +11,47 @@
       box-sizing: border-box;
     }
 
-    html {
-      background-color: #fff;
-    }
-
-    body {
+    html, body {
+      height: 100%;
       background: white;
       font-family: sans-serif;
-      padding-top: env(safe-area-inset-top); /* <-- Wichtig für iOS oben */
     }
 
     .header-wrapper {
       position: relative;
     }
 
-    /* Blauer Header mit Schräge via transform */
+    /* 🔵 Blauer Header mit Schräge */
     .header {
       height: 20vh;
       min-height: 120px;
       background: linear-gradient(to bottom, #033D6E, #015891);
-      transform: skewY(-1.6deg); /* exakt gleicher Winkel wie Gelb */
+      transform: skewY(-1.6deg);
       transform-origin: top left;
       position: relative;
       z-index: 2;
     }
 
-    /* Gelber Streifen ebenfalls schräg */
+    /* 🟨 Gelber Streifen mit exakt gleicher Schräge */
     .yellow-stripe {
       height: 8px;
       width: 100%;
       background: #FAE100;
       transform: skewY(-1.6deg);
       transform-origin: top left;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Sichtbarer Schatten */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       z-index: 3;
       position: relative;
+    }
+
+    .header-content {
+      position: absolute;
+      top: calc(env(safe-area-inset-top, 0px) + 1rem);
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      z-index: 4;
     }
 
     main {
@@ -60,6 +66,10 @@
   <div class="header-wrapper">
     <div class="header"></div>
     <div class="yellow-stripe"></div>
+    <div class="header-content">
+      <h1>Meine Website</h1>
+      <p>Einleitung oder Navigation</p>
+    </div>
   </div>
 
   <main>
