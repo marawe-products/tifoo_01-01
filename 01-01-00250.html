@@ -81,13 +81,15 @@
     header h1 {
       margin: 0;
       flex: 1 1 auto;
-      min-width: 0;              /* Erlaubt Shrinken */
+      min-width: 0;
       color: #fff;
       text-align: right;
-      font-size: clamp(1rem, 5vw, 1.5rem); /* dynamische Schriftgröße */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      /* Dynamische Schriftgröße: wächst und schrumpft passend */
+      font-size: clamp(1rem, 6vw, 2rem);
+      line-height: 1.2;
+      /* Entfernt erzwungene Ein-Zeilen-Beschränkung */
+      white-space: normal;
+      overflow: visible;
     }
     main {
       padding: 2rem 1rem;
@@ -211,9 +213,11 @@
       margin: 0 auto;
       padding: 0 1rem;
       box-sizing: border-box;
-      /* Dynamische Schriftgröße für Footerteext, schrumpft bei schmalen Geräten */
-      font-size: clamp(0.5rem, 2.5vw, 1rem);
-      white-space: nowrap;        /* verhindert Umbruch */
+      /* Dynamische Schriftgröße, passt sich an Viewport an */
+      font-size: clamp(0.75rem, 2vw, 1rem);
+      /* Mehrzeiliges Layout erlauben */
+      white-space: normal;
+      overflow: visible;
       text-align: center;
     }
     .language-selector {
