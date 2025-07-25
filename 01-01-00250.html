@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
   <title>tifoo_XX-XX-XXXXX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Candara&display=swap" rel="stylesheet">
+  <!-- @font-face für Candara einbinden (Webfont-Datei muss im Ordner /fonts liegen) -->
   <style>
+    @font-face {
+      font-family: 'Candara';
+      src: url('fonts/Candara.woff2') format('woff2'),
+           url('fonts/Candara.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -63,7 +71,7 @@
       z-index: 3;
     }
     header img {
-      height: 60px;
+      height: 50px; /* Logo verkleinert */
       margin-right: 1rem;
     }
     header h1 {
@@ -71,6 +79,7 @@
       flex: 1;
       color: #fff;
       text-align: right;
+      /* Dynamische Schriftgröße bleibt erhalten */
       font-size: clamp(1.2rem, 6vw, 2rem);
     }
     main {
