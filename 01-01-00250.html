@@ -211,11 +211,9 @@
       margin: 0 auto;
       padding: 0 1rem;
       box-sizing: border-box;
-      /* Dynamische Schriftgröße, passt sich an Viewport an */
-      font-size: clamp(0.75rem, 1.5vw, 1.25rem);
-      white-space: nowrap;         /* verhindert Umbruch */
-      overflow: hidden;
-      text-overflow: ellipsis;     /* wenn zu lang, mit "..." anzeigen */
+      /* Dynamische Schriftgröße für Footerteext, schrumpft bei schmalen Geräten */
+      font-size: clamp(0.5rem, 2.5vw, 1rem);
+      white-space: nowrap;        /* verhindert Umbruch */
       text-align: center;
     }
     .language-selector {
