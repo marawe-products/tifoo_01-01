@@ -5,16 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
   <title>tifoo_XX-XX-XXXXX</title>
-  <!-- @font-face für Candara einbinden (Webfont-Datei muss im Ordner /fonts liegen) -->
+  <!-- Einfach und ohne lokale Webfont-Ordner: Google Font "Poppins" einbinden -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Candara';
-      src: url('fonts/Candara.woff2') format('woff2'),
-           url('fonts/Candara.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
     * {
       margin: 0;
       padding: 0;
@@ -22,7 +15,7 @@
     }
     html, body {
       position: relative;
-      font-family: 'Candara', sans-serif;
+      font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
       background: white;
@@ -71,16 +64,20 @@
       z-index: 3;
     }
     header img {
-      height: 50px; /* Logo verkleinert */
+      height: 40px; /* Logo noch etwas kleiner für Platz */
+      flex-shrink: 0;
       margin-right: 1rem;
     }
     header h1 {
       margin: 0;
-      flex: 1;
+      flex: 1 1 auto;
+      min-width: 0;              /* Erlaubt Shrinken */
       color: #fff;
       text-align: right;
-      /* Dynamische Schriftgröße bleibt erhalten */
-      font-size: clamp(1.2rem, 6vw, 2rem);
+      font-size: clamp(1rem, 5vw, 1.5rem); /* leicht reduziert für sicheren Platz */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;   /* Falls es doch zu lang ist */
     }
     main {
       padding: 2rem 1rem;
@@ -232,7 +229,6 @@
       <h1 data-i18n="header-title">PRODUKTINFORMATIONEN</h1>
     </header>
   </div>
-
   <main>
     <div class="product-widget">
       <div class="product-info">
@@ -312,7 +308,6 @@
       </select>
     </div>
   </main>
-
   <footer>
     <div class="footer-content">
       <span data-i18n="footer-line1">MARAWE GmbH &amp; Co. KG • An der Irler Höhe 3b • 93055 Regensburg</span><br>
@@ -320,7 +315,6 @@
       <span data-i18n="footer-line3">Copyright © TIFOO – Alle Rechte vorbehalten</span><br>
     </div>
   </footer>
-
   <script>
     const translations = {
       de: {
