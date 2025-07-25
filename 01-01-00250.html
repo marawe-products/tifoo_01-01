@@ -84,12 +84,12 @@
       min-width: 0;
       color: #fff;
       text-align: right;
-      /* Dynamische Schriftgröße: wächst und schrumpft passend */
-      font-size: clamp(1rem, 6vw, 2rem);
+      /* Dynamische Schriftgröße: wächst und schrumpft passend, aber maximal etwas reduziert, damit sie nicht zu weit nach rechts reicht */
+      font-size: clamp(1rem, 5vw, 1.8rem);
       line-height: 1.2;
-      /* Entfernt erzwungene Ein-Zeilen-Beschränkung */
       white-space: normal;
       overflow: visible;
+      padding-right: 1rem; /* Sicherheitsabstand zum rechten Rand */
     }
     main {
       padding: 2rem 1rem;
@@ -213,9 +213,8 @@
       margin: 0 auto;
       padding: 0 1rem;
       box-sizing: border-box;
-      /* Dynamische Schriftgröße, passt sich an Viewport an */
-      font-size: clamp(0.75rem, 2vw, 1rem);
-      /* Mehrzeiliges Layout erlauben */
+      /* Dynamische Schriftgröße, passt sich an Viewport an, minimale Größe weiter verkleinert */
+      font-size: clamp(0.5rem, 2vw, 1rem);
       white-space: normal;
       overflow: visible;
       text-align: center;
