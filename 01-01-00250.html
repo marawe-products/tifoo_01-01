@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
   <title>tifoo_XX-XX-XXXXX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Candara&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,7 +14,7 @@
     }
     html, body {
       position: relative;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: 'Candara', sans-serif;
       display: flex;
       flex-direction: column;
       background: white;
@@ -24,6 +24,7 @@
       position: relative;
       height: 25vh;
       min-height: 140px;
+      padding-top: env(safe-area-inset-top, 0px);
     }
     .header-bg {
       position: absolute;
@@ -49,11 +50,15 @@
       z-index: 2;
     }
     header {
-      position: relative;
-      padding: env(safe-area-inset-top, 0px) 1.5rem 1rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 1.5rem;
       background: transparent;
       z-index: 3;
     }
@@ -75,7 +80,7 @@
     }
     .product-widget {
       background: #fff;
-      border: 1px solid #ededed;
+      border: 1px solid #FAE100;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
