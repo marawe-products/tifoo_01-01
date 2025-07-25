@@ -228,6 +228,24 @@
       padding: 0.5rem;
       font-size: 1rem;
     }
+    footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #777;
+    padding: 0 0 0.75rem;
+    position: relative;
+    z-index: 1;
+    }
+    footer .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    /* entferne die Zeile white-space: nowrap; */
+    text-align: center;            /* fügt echtes Zeilen-Zentrieren hinzu */
+    }
+
   </style>
 </head>
 <body>
