@@ -4,40 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
-  <title>tobolin_XX-XX-XXXXX</title>
+  <title>tifoo_XX-XX-XXXXX</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-    html,
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
       position: relative;
       font-family: 'Source Sans Pro', sans-serif;
       display: flex;
       flex-direction: column;
       background: white;
       height: 100%;
-  }
-
-    header {
-      position: relative;
-      padding: 3rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: transparent;
-      z-index: 1;
-  }
-    
+    }
     .header-wrapper {
       position: relative;
       height: 25vh;
       min-height: 140px;
-  }
-  
+    }
     .header-bg {
       position: absolute;
       top: 0;
@@ -48,8 +35,7 @@
       transform: skewY(-1.6deg);
       transform-origin: top left;
       z-index: 1;
-  }
-  
+    }
     .yellow-stripe {
       position: absolute;
       bottom: 0;
@@ -61,33 +47,32 @@
       transform-origin: top left;
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
       z-index: 2;
-  }
-
-    .header-content {
+    }
+    header {
       position: relative;
+      padding: env(safe-area-inset-top, 0px) 1.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
       z-index: 3;
-      padding: env(safe-area-inset-top, 0px) 1rem 0;
-      color: white;
-      text-align: center;
-  }
-
+    }
+    header img {
+      height: 60px;
+      margin-right: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      flex: 1;
+      color: #fff;
+      text-align: right;
+      font-size: clamp(1.2rem, 6vw, 2rem);
+    }
     main {
       padding: 2rem 1rem;
       position: relative;
       z-index: 1;
-  }
-  
-    header img { height: 60px; margin-right: 1rem; }
-    header h1 {
-      margin: 0;
-      text-align: right;
-      flex: 1;
-      color: #000;
-      font-size: clamp(1.2rem, 6vw, 2rem);
     }
-
-    
-
     .product-widget {
       background: #fff;
       border: 1px solid #ededed;
@@ -98,12 +83,14 @@
       justify-content: space-between;
       margin: 0 auto 1rem;
       padding: 1rem;
-      width: 90%;
+      width: 100%;
       max-width: 600px;
       position: relative;
       z-index: 1;
     }
-    .product-widget .product-info { flex: 1; }
+    .product-widget .product-info {
+      flex: 1;
+    }
     .product-widget .product-info .product-name {
       font-size: 1.25rem;
       font-weight: 700;
@@ -120,8 +107,6 @@
       margin-left: 1rem;
       border-radius: 4px;
     }
-
-    main { padding: 1rem; }
     .card {
       background: #fff;
       border: 1px solid #ededed;
@@ -129,7 +114,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       margin: 0 auto 1rem;
       padding: 1rem;
-      width: 90%;
+      width: 100%;
       max-width: 600px;
       text-align: left;
       position: relative;
@@ -152,8 +137,9 @@
       width: fit-content;
       margin: 0 auto;
     }
-    .btn:hover { background-color: #256528; }
-
+    .btn:hover {
+      background-color: #256528;
+    }
     .social-text {
       text-align: center;
       color: #000;
@@ -164,7 +150,6 @@
       position: relative;
       z-index: 1;
     }
-
     .social-icons {
       margin: 2rem auto;
       display: flex;
@@ -189,8 +174,9 @@
       display: block;
       fill: #fff;
     }
-    .social-icons a:hover { background-color: #256528; }
-
+    .social-icons a:hover {
+      background-color: #256528;
+    }
     footer {
       text-align: center;
       font-size: 0.75rem;
@@ -207,7 +193,6 @@
       font-size: clamp(0.75rem, 1.2vw, 1rem);
       white-space: nowrap;
     }
-
     .language-selector {
       text-align: center;
       margin: 1rem 0;
@@ -228,12 +213,11 @@
   <div class="header-wrapper">
     <div class="header-bg"></div>
     <div class="yellow-stripe"></div>
+    <header>
+      <img src="Tifoo_Digital.svg" alt="Tifoo Logo" />
+      <h1 data-i18n="header-title">PRODUKTINFORMATIONEN</h1>
+    </header>
   </div>
-
-  <header>
-    <img src="Tobolin_Digital.svg" alt="TOBOLIN Logo" />
-    <h1 data-i18n="header-title">PRODUKTINFORMATIONEN</h1>
-  </header>
 
   <main>
     <div class="product-widget">
@@ -246,7 +230,6 @@
       </div>
     </div>
 
-    <!-- Alle Karten rendern, Sichtbarkeit wird durch JS gesteuert -->
     <div class="card" data-card-key="card-etikett">
       <h2 data-i18n="card-etikett">Etikett</h2>
       <a href="#" class="btn" data-i18n="btn-open">Öffnen</a>
@@ -308,7 +291,7 @@
       <label for="lang-select" data-i18n="label-language">Sprache:</label>
       <select id="lang-select">
         <option value="de">🇩🇪 Deutsch</option>
-	<option value="en">🇬🇧 English</option>
+    	<option value="en">🇬🇧 English</option>
         <option value="it">🇮🇹 Italiano</option>
         <option value="fr">🇫🇷 Français</option>
         <option value="es">🇪🇸 Español</option>
