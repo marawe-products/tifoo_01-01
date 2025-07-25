@@ -215,9 +215,12 @@
       box-sizing: border-box;
       /* Dynamische Schriftgröße, passt sich an Viewport an, minimale Größe weiter verkleinert */
       font-size: clamp(0.5rem, 2vw, 1rem);
-      white-space: normal;
-      overflow: visible;
       text-align: center;
+    }
+    /* Einzelne Footer-Zeilen nicht umbrechen */
+    footer .footer-content span {
+      display: block;
+      white-space: nowrap;
     }
     .language-selector {
       text-align: center;
